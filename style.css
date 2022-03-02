@@ -79,6 +79,9 @@ img {
 #top-header #top-navbar .navbar-left .logo-container {
   width: 150px;
 }
+#top-header #top-navbar .navbar-left .logo-container .logo-mobile {
+  display: none;
+}
 
 #top-header #top-navbar .navbar-left #main-navigation {
   gap: 3em;
@@ -184,7 +187,7 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 78vh;
+  height: 700px;
   background-color: #273244;
   color: #fff;
 }
@@ -222,7 +225,7 @@ img {
 #hero-section .hero-right .hero-img-container {
   width: 100%;
   height: 0;
-  padding-top: 78vh;
+  padding-top: 700px;
   position: relative;
 }
 
@@ -261,7 +264,7 @@ img {
 }
 
 #form-partners-section .section-2-left .form-container {
-  width: 70%;
+  width: 550px;
   margin-top: -35%;
   padding: 4em 3em;
   background-color: #fff;
@@ -743,11 +746,22 @@ img {
     font-size: 1.2em;
   }
 
-  #main-navigation, .navbar-right,   #hero-section .hero-right,
+  #main-navigation, #top-header #top-navbar .navbar-left .logo-container .logo-img, .navbar-button-container,   #hero-section .hero-right,
   #section-4 .steps-img {
     display: none;
   }
 
+  #top-header #top-navbar .mobile-navbar {
+    width: 100vw;
+    height: 100vh;
+  }
+  #top-header #top-navbar .navbar-left .logo-container .logo-mobile, .mobile-button-container{
+    display: block;
+
+  }
+  #top-header #top-navbar .navbar-left .logo-container {
+    width: 30px;
+  } 
   #top-header {
     padding: 1em 2em;
   }
