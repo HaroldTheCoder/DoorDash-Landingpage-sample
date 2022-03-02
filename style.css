@@ -336,6 +336,7 @@ img {
   padding: 0.5em 0.3em;
   font-size: 0.85em;
   color: #FF2E06;
+  text-align: left;
 }
 
 #form-partners-section .section-2-left .form-container #main-form .invalid-message .fa-circle-exclamation {
