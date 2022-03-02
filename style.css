@@ -773,7 +773,9 @@ img {
           flex-direction: column;
     height: auto;
   }
-
+#hero-section .hero-left {
+ height: 500px;
+}
   #hero-section .hero-left,
   #form-partners-section, #page-footer,   #section-5 .section-right,
   #cta-section {
@@ -791,6 +793,9 @@ img {
     width: 100%;
   }
 
+  #form-partners-section .section-2-left .form-container {
+  margin-top: -70%;
+  }
   #form-partners-section .section-2-left .form-container {
   padding: 2em;
   }
