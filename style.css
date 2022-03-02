@@ -757,9 +757,8 @@ img {
     width: 100vw;
     height: 100vh;
   }
-  #top-header #top-navbar .navbar-left .logo-container .logo-mobile, .mobile-button-container{
+  #top-header #top-navbar .navbar-left .logo-container .logo-mobile, #top-header #top-navbar .navbar-right .open-container {
     display: block;
-
   }
   #top-header #top-navbar .navbar-left .logo-container {
     width: 30px;
@@ -767,7 +766,9 @@ img {
   #top-header {
     padding: 1em 2em;
   }
-
+#hero-section {
+  height: auto;
+}
   #hero-section, #form-partners-section {
     -ms-flex-direction: column;
           flex-direction: column;
