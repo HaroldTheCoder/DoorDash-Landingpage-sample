@@ -11,8 +11,8 @@ dropdownLink[0].addEventListener('click', ()=> {
     navDropdown[0].classList.toggle('dropdown-active');
 
     // Closes other dropdowns if open
-        navArrow[1].classList.remove('arrow-active');
-        navDropdown[1].classList.remove('dropdown-active');
+    navArrow[1].classList.remove('arrow-active');
+    navDropdown[1].classList.remove('dropdown-active');
 });
 
 
@@ -29,6 +29,43 @@ mainPage.addEventListener('click', ()=> {
     navArrow.forEach((n) => n.classList.remove('arrow-active'));
     navDropdown.forEach((d) => d.classList.remove('dropdown-active'));
 })
+
+// Mobile Navbar and Dropdown
+const mobileNavbar = document.querySelector('#mobile-nav');
+const openButton = document.querySelector('.open-button');
+const closeButton = document.querySelector('.close-button');
+const mobileLink = document.querySelectorAll('.mobile-link');
+
+openButton.addEventListener('click', ()=> {
+    mobileNavbar.classList.add('active');
+})
+
+closeButton.addEventListener('click', ()=> {
+    mobileNavbar.classList.remove('active');
+})
+
+mobileLink.forEach((m) => m.addEventListener('click', ()=> {
+    mobileNavbar.classList.remove('active');
+}))
+
+
+dropdownLink[2].addEventListener('click', ()=> {
+    navArrow[2].classList.toggle('arrow-active');
+    navDropdown[2].classList.toggle('dropdown-active');
+
+    // Closes other dropdowns if open
+    navArrow[3].classList.remove('arrow-active');
+    navDropdown[3].classList.remove('dropdown-active');
+});
+
+dropdownLink[3].addEventListener('click', ()=> {
+    navArrow[3].classList.toggle('arrow-active');
+    navDropdown[3].classList.toggle('dropdown-active');
+
+    // Closes other dropdowns if open
+    navArrow[2].classList.remove('arrow-active');
+    navDropdown[2].classList.remove('dropdown-active');
+});
 
 // ---------------------------------------------------------------------------->
 

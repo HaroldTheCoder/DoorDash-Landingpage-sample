@@ -36,12 +36,90 @@ a {
   text-decoration: none;
 }
 
+.fa-chevron-down {
+  font-size: 0.85em;
+}
+
 ul {
   list-style-type: none;
 }
 
 img {
   width: 100%;
+}
+
+/* Mobile Navbar Style */
+#mobile-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  padding: 3em 1.5em;
+  z-index: 1;
+  display: none;
+}
+
+#mobile-nav.active {
+  display: block;
+}
+
+#main-navigation-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+          gap: 2em;
+          padding: 2em 0;
+}
+
+#main-navigation-mobile .nav-item .nav-dropdown {
+  display: none;
+  width: 100%;
+  padding: 1em 0 1em 1em;
+  z-index: 2;
+  background-color: #fff;
+}
+
+#main-navigation-mobile .nav-item,
+#main-navigation-mobile .nav-item .nav-dropdown .dropdown-item {
+  width: 100%;
+  border-bottom: 1.5px solid #d0d6e2 ;
+  padding: 0.5em 0;
+}
+
+#mobile-nav .mobile-button-container {
+    display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 3em 0 0;
+  gap: 1.5em;
+}
+
+#mobile-nav .close-container {
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
 }
 
 /* Navbar Style */
@@ -78,6 +156,7 @@ img {
 
 #top-header #top-navbar .navbar-left .logo-container {
   width: 150px;
+  z-index: 2;
 }
 #top-header #top-navbar .navbar-left .logo-container .logo-mobile {
   display: none;
@@ -92,8 +171,10 @@ img {
   cursor: pointer;
 }
 
-#top-header #top-navbar .navbar-left #main-navigation .nav-item .nav-link {
-  font-size: 1.15em;
+#top-header #top-navbar .navbar-left #main-navigation .nav-item .nav-link,
+#mobile-nav #main-navigation-mobile .nav-item .nav-link 
+ {
+  font-size: 1.10em;
   font-weight: 500;
   color: #273244;
 }
@@ -132,12 +213,14 @@ img {
   gap: 3em;
 }
 
-#top-header #top-navbar .navbar-right .navbar-button-container .login-button {
+#top-header #top-navbar .navbar-right .navbar-button-container .login-button,
+#mobile-nav .mobile-button-container .login-button {
   color: #273244;
   text-decoration: underline;
 }
 
-#top-header #top-navbar .navbar-right .navbar-button-container .sign-up-button {
+#top-header #top-navbar .navbar-right .navbar-button-container .sign-up-button,
+#mobile-nav .mobile-button-container .sign-up-button {
   padding: 0.5em 2em;
   border: none;
   border-radius: 5em;
@@ -559,6 +642,10 @@ img {
   font-weight: 500;
 }
 
+#section-5 .section-right .section-content .cta-button:hover {
+  background-color: #f00000;
+}
+
 /* CTA section Style */
 #cta-section {
   display: -webkit-box;
@@ -592,12 +679,12 @@ img {
   border-radius: 5em;
   color: #fff;
   cursor: pointer;
-  background-color: #273244;
+  background-color: #364e75;
   font-weight: 500;
 }
 
 #cta-section .cta-button:hover {
-  background-color: #364e75;
+  background-color: #273244;
 }
 
 /* Footer Style */
@@ -797,14 +884,19 @@ img {
   }
 
   #form-partners-section .section-2-left .form-container {
-  margin-top: -90%;
+    margin-top: -90%;
   }
+
   #form-partners-section .section-2-left .form-container {
-  padding: 2em;
+    padding: 2em;
   }
 
   #form-partners-section .section-2-left .form-container #main-form {
     gap: 1em;
+  }
+
+  #form-partners-section .section-2-left .form-container #main-form select {
+    background-size: 17px;
   }
 
   .section-2-right .partner-logo-container {
@@ -1065,6 +1157,10 @@ img {
 
   #form-partners-section .section-2-left .form-container #main-form {
     gap: 1em;
+  }
+
+  #form-partners-section .section-2-left .form-container #main-form select {
+    background-size: 17px;
   }
 
   .section-2-right .partner-logo-container {
