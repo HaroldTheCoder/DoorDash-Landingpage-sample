@@ -159,3 +159,132 @@ form.addEventListener('submit', (e)=> {
         businessType.style.border = "1.5px solid #C4C4C4";
     }
 });
+
+// ---------------------------------------------------------------------------->
+
+// Support chatbot
+const chatbot = document.querySelector('#chatbot');
+const chatCloseButton = document.querySelector('.chat-close-button');
+
+
+supportButton.addEventListener('click', ()=> {
+    chatbot.classList.add('active');
+})
+
+chatCloseButton.addEventListener('click', ()=> {
+    chatbot.classList.remove('active');
+});
+
+// Chatbot messages
+const messagesDisplay = document.querySelector('#chatbot-body');
+const textArea = document.querySelector('#textbox');
+const sendButton = document.querySelector('#send-button');
+
+
+
+// AutoBot greetings message
+let firstMessage = document.createElement('p');
+let secondMessage = document.createElement('p');
+
+firstMessage.innerHTML = "Hello!";
+secondMessage.innerHTML = "How can I help you today?";
+messagesDisplay.appendChild(firstMessage);
+messagesDisplay.appendChild(secondMessage);
+
+
+sendButton.addEventListener('click', ()=> {
+    let newMessage = document.createElement('p');
+    newMessage.innerHTML = textArea.value;
+    messagesDisplay.appendChild(newMessage);
+    textArea.value = ""
+
+
+    newMessage.style.textAlign= "right";
+    newMessage.style.background = "linear-gradient(to right, #f74033, #f7724a)";
+    newMessage.style.color = "#fff";
+    newMessage.style.margin = "0.5em 0 0.5em auto"
+
+
+    let autBotMessage;
+    switch(newMessage.innerHTML) {
+        case "How are you?":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "I am doing good thank you!";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "I need help":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "Please tell me more about your issue.";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "How can I become a partner?":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "To become a DoorDash partner, first you need to register your business using the form at the top of the page. We will send you an email to let you know if your business was approved or not.";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "The page is not working":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "Try to reload the page or close and open this window again.";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "I can't find a link":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "Links are located at the top of the page.";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "I want more info":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "For more contact and more info about DoorDash click on the `COntact` link at the top of the page";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "Who can I contact?":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "For more contact and more info about DoorDash click on the `COntact` link at the top of the page";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "It works!":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "Awesome, is there anything else I can do you today?";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "I found it!":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "Awesome, is there anything else I can do you today?";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "That is all":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "Awesome";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "That is all, thank you!":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "Awesome, have a great day!";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "Thank you!":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "You are welcome!";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+
+        case "Bye, thank you!":
+            autBotMessage = document.createElement('p');
+            autBotMessage.innerHTML = "My pleasure to help. Have a great day!";
+            messagesDisplay.appendChild(autBotMessage);
+        break;
+    };
+
+});
+
