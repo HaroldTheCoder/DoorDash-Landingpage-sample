@@ -331,7 +331,7 @@ function messageSent() {
 
         case "bye":
             autoBotMessage = document.createElement('p');
-            autoBotMessage.innerHTML = "Bye, Have a great day!";
+            autoBotMessage.innerHTML = "Bye, have a great day!";
             setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
             setTimeout(()=>{audio.play()}, 1000);
         break;
