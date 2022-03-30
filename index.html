@@ -229,7 +229,7 @@
                 <p class="sub-heading">Our experts are here for you 24/7</p>
             </header>
 
-            <a href="" class="cta-button">Chat with an expert now!</a>
+            <button type="button" class="cta-button">Chat with an expert now!</button>
         </section>
     </main>
 
@@ -344,9 +344,14 @@
             </div>
 
             <div class="message-typing-area">
-               <input id="textbox" type="text" placeholder="Type your message...">
-               <i class="fa-solid fa-paperclip"></i>
-               <button id="send-button" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                <input id="textbox" type="text"  placeholder="Type your message..." rows="5" cols="33" >
+                <div class="chat-buttons-container">
+                    <button id="send-button" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    <label for="file-upload">
+                        <input type="file" id="file-upload" name="file-upload" accept="image/png, image/jpeg">
+                        <i class="fa-solid fa-paperclip"></i>
+                    </label>
+                </div>
             </div>
         </div>
     </div>

@@ -674,13 +674,19 @@ img {
 }
 
 #cta-section .cta-button {
-  padding: 0.5em 2em;
+  padding: 0.6em 2em;
   border: none;
   border-radius: 5em;
   color: #fff;
   cursor: pointer;
   background-color: #364e75;
   font-weight: 500;
+  font-size: 1.1em;
+}
+
+#cta-section .cta-button:focus {
+  outline: none;
+  border: none;
 }
 
 #cta-section .cta-button:hover {
@@ -853,10 +859,6 @@ img {
   color: #fff;
 }
 
-.chat-close-button, .support-button {
-  cursor: pointer;
-}
-
 .team-profile {
   display: flex;
   justify-content: space-between;
@@ -897,7 +899,6 @@ img {
   background-color: #eff4fa;
 }
 
-
 .message-typing-area {
   display: flex;
   justify-content: space-between;
@@ -910,11 +911,19 @@ img {
 
 #textbox {
   width: 80%;
-  height: 25px;
+  max-width: 80%;
+  height: 40px;
   padding: 1em;
   border: none;
   border-radius: 1rem;
-  overflow-wrap: normal;
+  resize: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: #f6f6f6;
+}
+
+#textbox::-webkit-scrollbar {
+  display: none;
 }
 
 #textbox:focus {
@@ -922,12 +931,27 @@ img {
   border: none;
 }
 
+.chat-button-container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
 #send-button {
-  padding: 0 1em;
+  padding-right: 0.5em;
   border: none;
   background-color: #fff;
   font-size: 1.1em;
 
+}
+
+.chat-close-button, .support-button,
+#send-button, label {
+  cursor: pointer;
+}
+
+input[type=file] {
+  display: none;
 }
 
 /* Media queries - Responsive Design */

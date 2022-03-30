@@ -71,8 +71,8 @@ dropdownLink[3].addEventListener('click', ()=> {
 
 // On Window Scroll Functions
 const supportButton = document.querySelector('#support-button-container');
-window.addEventListener('scroll', ()=> {
 
+window.addEventListener('scroll', ()=> {
     // Fixed Navbar
     if(window.scrollY > 0) {
         navbar.classList.add('fixed-navbar');
@@ -165,126 +165,192 @@ form.addEventListener('submit', (e)=> {
 // Support chatbot
 const chatbot = document.querySelector('#chatbot');
 const chatCloseButton = document.querySelector('.chat-close-button');
+const ctaButton = document.querySelector('.cta-button');
+let greetingMessage = false;
+let audio = new Audio('message-pop-alert.mp3');
 
+// AutoBot greetings message
+const greetings = ()=> {
+    let firstMessage = document.createElement('p');
+    let secondMessage = document.createElement('p');
+
+    firstMessage.innerHTML = "Hello!";
+    secondMessage.innerHTML = "How can I help you today?";
+    setTimeout(()=> {messagesDisplay.appendChild(firstMessage)}, 500)
+    setTimeout(()=> {messagesDisplay.appendChild(secondMessage)}, 800)
+    setTimeout(()=> {audio.play()}, 700);
+    greetingMessage = true;
+}
+
+ctaButton.addEventListener('click', ()=> {
+    chatbot.classList.add('active');
+});
 
 supportButton.addEventListener('click', ()=> {
     chatbot.classList.add('active');
-})
+    if (!greetingMessage) greetings();
+});
 
 chatCloseButton.addEventListener('click', ()=> {
     chatbot.classList.remove('active');
 });
 
 // Chatbot messages
+
 const messagesDisplay = document.querySelector('#chatbot-body');
 const textArea = document.querySelector('#textbox');
 const sendButton = document.querySelector('#send-button');
 
 
 
-// AutoBot greetings message
-let firstMessage = document.createElement('p');
-let secondMessage = document.createElement('p');
-
-firstMessage.innerHTML = "Hello!";
-secondMessage.innerHTML = "How can I help you today?";
-messagesDisplay.appendChild(firstMessage);
-messagesDisplay.appendChild(secondMessage);
-
-
-sendButton.addEventListener('click', ()=> {
+function messageSent() {
     let newMessage = document.createElement('p');
-    newMessage.innerHTML = textArea.value;
-    messagesDisplay.appendChild(newMessage);
-    textArea.value = ""
+        newMessage.innerHTML = textArea.value;
+        messagesDisplay.appendChild(newMessage);
+    
 
 
     newMessage.style.textAlign= "right";
     newMessage.style.background = "linear-gradient(to right, #f74033, #f7724a)";
     newMessage.style.color = "#fff";
-    newMessage.style.margin = "0.5em 0 0.5em auto"
+    newMessage.style.margin = "0.5em 0 0.5em auto";
 
+    if(textArea.value == "") {
+        messagesDisplay.removeChild(newMessage);
+    }
+    textArea.value = "";
 
-    let autBotMessage;
-    switch(newMessage.innerHTML) {
-        case "How are you?":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "I am doing good thank you!";
-            messagesDisplay.appendChild(autBotMessage);
+    let autoBotMessage;
+
+    switch(newMessage.innerHTML.toLocaleLowerCase()) {
+        case "how are you?":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "I am doing good thank you!";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
+            
         break;
 
-        case "I need help":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "Please tell me more about your issue.";
-            messagesDisplay.appendChild(autBotMessage);
+        case "i need help":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "Please tell me more about your issue.";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "How can I become a partner?":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "To become a DoorDash partner, first you need to register your business using the form at the top of the page. We will send you an email to let you know if your business was approved or not.";
-            messagesDisplay.appendChild(autBotMessage);
+        case "i want to become a partner":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "To become a DoorDash partner, first you need to register your business using the form at the top of the page. We will send you an email to let you know if your business was approved or not.";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "The page is not working":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "Try to reload the page or close and open this window again.";
-            messagesDisplay.appendChild(autBotMessage);
+        case "how can I become a partner?":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "To become a DoorDash partner, first you need to register your business using the form at the top of the page. We will send you an email to let you know if your business was approved or not.";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "I can't find a link":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "Links are located at the top of the page.";
-            messagesDisplay.appendChild(autBotMessage);
+        case "the page is not working":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "Try to reload the page or close and open this window again.";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "I want more info":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "For more contact and more info about DoorDash click on the `COntact` link at the top of the page";
-            messagesDisplay.appendChild(autBotMessage);
+        case "i can't find a link":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "Links are located at the top of the page.";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1500);
         break;
 
-        case "Who can I contact?":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "For more contact and more info about DoorDash click on the `COntact` link at the top of the page";
-            messagesDisplay.appendChild(autBotMessage);
+        case "i want more info":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "For more contact and more info about DoorDash click on the '<b>Contact</b>' link at the top of the page";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1500);
+            setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "It works!":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "Awesome, is there anything else I can do you today?";
-            messagesDisplay.appendChild(autBotMessage);
+        case "who can I contact?":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "For more contact and more info about DoorDash click on the '<b>Contact</b>' link at the top of the page";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "I found it!":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "Awesome, is there anything else I can do you today?";
-            messagesDisplay.appendChild(autBotMessage);
+        case "it works!":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "Awesome, is there anything else I can do you today?";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "That is all":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "Awesome";
-            messagesDisplay.appendChild(autBotMessage);
+        case "i found it!":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "Awesome, is there anything else I can do you today?";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "That is all, thank you!":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "Awesome, have a great day!";
-            messagesDisplay.appendChild(autBotMessage);
+        case "got it!":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "Awesome, is there anything else I can do you today?";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "Thank you!":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "You are welcome!";
-            messagesDisplay.appendChild(autBotMessage);
+        case "i got it, thank you!":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "Awesome, is there anything else I can do you today?";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "Bye, thank you!":
-            autBotMessage = document.createElement('p');
-            autBotMessage.innerHTML = "My pleasure to help. Have a great day!";
-            messagesDisplay.appendChild(autBotMessage);
+        case "that is all":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "Awesome";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
+        break;
+
+        case "that is all, thank you!":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "Awesome, have a great day!";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
+        break;
+
+        case "thank you!":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "You are welcome!";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
+        break;
+
+        case "bye":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "Bye, Have a great day!";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
+        break;
+
+        case "bye, thank you!":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "My pleasure to help. Have a great day!";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
         break;
     };
+    
+};
 
+sendButton.addEventListener('click', messageSent);
+
+textArea.addEventListener('keyup', (e)=> {
+    if(e.key === 'Enter') {
+        messageSent();
+    }
 });
 
