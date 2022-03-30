@@ -946,12 +946,8 @@ img {
 }
 
 .chat-close-button, .support-button,
-#send-button, label {
+#send-button, .fa-paperclip{
   cursor: pointer;
-}
-
-input[type=file] {
-  visibility: hidden;
 }
 
 /* Media queries - Responsive Design */
