@@ -245,7 +245,7 @@ function messageSent() {
             setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "how can I become a partner?":
+        case "how can i become a partner?":
             autoBotMessage = document.createElement('p');
             autoBotMessage.innerHTML = "To become a DoorDash partner, first you need to register your business using the form at the top of the page. We will send you an email to let you know if your business was approved or not.";
             setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
@@ -273,7 +273,7 @@ function messageSent() {
             setTimeout(()=>{audio.play()}, 1000);
         break;
 
-        case "who can I contact?":
+        case "who can i contact?":
             autoBotMessage = document.createElement('p');
             autoBotMessage.innerHTML = "For more contact and more info about DoorDash click on the '<b>Contact</b>' link at the top of the page";
             setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
