@@ -165,9 +165,25 @@ form.addEventListener('submit', (e)=> {
 // Support chatbot
 const chatbot = document.querySelector('#chatbot');
 const chatCloseButton = document.querySelector('.chat-close-button');
-const ctaButton = document.querySelector('.cta-button');
+const ctaButton = document.querySelector('.cta-chat-button');
 let greetingMessage = false;
 let audio = new Audio('message-pop-alert.mp3');
+
+
+ctaButton.addEventListener('click', ()=> {
+    chatbot.classList.add('active');
+    if (!greetingMessage) greetings();
+});
+
+supportButton.addEventListener('click', ()=> {
+    chatbot.classList.add('active');
+    if (!greetingMessage) greetings();
+});
+
+chatCloseButton.addEventListener('click', ()=> {
+    chatbot.classList.remove('active');
+});
+
 
 // AutoBot greetings message
 const greetings = ()=> {
@@ -181,19 +197,6 @@ const greetings = ()=> {
     setTimeout(()=> {audio.play()}, 700);
     greetingMessage = true;
 }
-
-ctaButton.addEventListener('click', ()=> {
-    chatbot.classList.add('active');
-});
-
-supportButton.addEventListener('click', ()=> {
-    chatbot.classList.add('active');
-    if (!greetingMessage) greetings();
-});
-
-chatCloseButton.addEventListener('click', ()=> {
-    chatbot.classList.remove('active');
-});
 
 // Chatbot messages
 
@@ -323,6 +326,27 @@ function messageSent() {
         break;
 
         case "thank you!":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "You are welcome!";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
+        break;
+
+        case "thank you":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "You are welcome!";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
+        break;
+
+        case "thanks!":
+            autoBotMessage = document.createElement('p');
+            autoBotMessage.innerHTML = "You are welcome!";
+            setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
+            setTimeout(()=>{audio.play()}, 1000);
+        break;
+
+        case "thanks":
             autoBotMessage = document.createElement('p');
             autoBotMessage.innerHTML = "You are welcome!";
             setTimeout(()=>{messagesDisplay.appendChild(autoBotMessage)}, 1000);
