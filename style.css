@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   background-color: #fff;
   color: #273244;
@@ -903,7 +903,7 @@ img {
   padding: 1em;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  background: linear-gradient(to left, #f74033, #f7724a);
+  background: #FF3008;
   height: 15%;
   color: #fff;
 }
