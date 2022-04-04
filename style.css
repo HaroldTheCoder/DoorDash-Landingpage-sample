@@ -66,6 +66,10 @@ img {
   display: block;
 }
 
+.open-container {
+    color: #fff;
+  }
+
 #main-navigation-mobile {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -247,15 +251,6 @@ img {
 }
 #top-header #top-navbar .navbar-right .navbar-button-container .sign-up-button:hover {
   background-color: #f00000;
-}
-
-.fixed-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  -webkit-box-shadow: 0px 0px 20px #0000001f;
-          box-shadow: 0px 0px 20px #0000001f;
 }
 
 .dropdown-active {
@@ -574,7 +569,7 @@ img {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-evenly;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -602,8 +597,8 @@ img {
 }
 
 #section-4 .steps-img {
-  -webkit-transform: scale(0.65);
-          transform: scale(0.65);
+  -webkit-transform: scale(0.80);
+          transform: scale(0.80);
 }
 #section-4 .steps-img-mobile {
     display: none;
@@ -742,7 +737,23 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-          padding: 0 7em;
+          padding: 0 10em 2em 10em;
+}
+
+#page-footer .column-container .column .logo-bottom-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 #page-footer .column-container .column {
@@ -758,8 +769,16 @@ img {
   font-size: 1.2em;
 }
 
-#page-footer .column-container .column .logo-bottom-container {
-  width: 150px;
+#page-footer .column-container .column .logo-bottom {
+  width: 40px;
+}
+
+#page-footer .column-container .column .logo-bottom-container figcaption {
+  padding-left: 0.5em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 2px;
 }
 
 #page-footer .column-container .column .column-header {
@@ -776,7 +795,7 @@ img {
 }
 
 #page-footer .sub-footer {
-  padding: 5em 0 2.5em 0;
+  padding: 2.5em 0 2.5em 0;
   text-align: center;
   background-color: #fff;
 }
@@ -1284,10 +1303,6 @@ img {
   }
 
 
-  .open-container {
-    color: #fff;
-  }
-
   #top-header {
     justify-content: space-between;
     padding: 0.5em 1.5em;
@@ -1499,7 +1514,7 @@ img {
   }
 
   #page-footer {
-    padding: 2em 0 0;
+    padding: 0;
   }
 
   #page-footer .column-container {
@@ -1511,6 +1526,7 @@ img {
         -ms-flex-direction: column;
             flex-direction: column;
             text-align: center;
+            padding: 0;
   }
   
   #page-footer .sub-footer .sub-footer-link-container {
@@ -1843,15 +1859,6 @@ img {
  #top-header #top-navbar .navbar-right .open-container {
     display: block;
   }
-
-  #hero-section {
-    height: 600px;
-  }
-
-  #hero-section .hero-right .hero-img-container {
-    padding-top: 600px;
-  }
-
   #form-partners-section .section-2-left .form-container {
     width: 85%;
     margin-top: -50%;
@@ -1862,30 +1869,14 @@ img {
     gap: 1em;
   }
 
-  .section-2-right .partner-logo-container .partner-logo {
-    width: 150px;
-  }
-
   #section-3 .section-container .content .section-text {
     font-size: 1.5em;
     width: 60%;
   }
 
-  #section-3 .section-container .section-img-container {
-    top: 10%;
-    right: -10%;
-  }
-
-  #section-3 .section-container .section-img-container .section-img {
-    width: 350px;
-  }
-
-  #section-4 {
-    padding: 7em 0em 12em 0em;
-  }
 
   #section-4 .column-container .column .column-img {
-    width: 80px;
+    width: 50px;
   }
 }
 
@@ -1901,13 +1892,7 @@ img {
   p {
     font-size: 1em;
   }
- #hero-section {
-    height: 600px;
-  }
 
-  #hero-section .hero-right .hero-img-container {
-    padding-top: 600px;
-  }
 
   #form-partners-section .section-2-left .form-container {
     width: 85%;
@@ -1919,26 +1904,8 @@ img {
     gap: 1em;
   }
 
-  .section-2-right .partner-logo-container .partner-logo {
-    width: 150px;
-  }
-
   #section-3 .section-container .content .section-text {
     font-size: 1.7em;
-    width: 60%;
-  }
-
-  #section-3 .section-container .section-img-container {
-    top: 10%;
-    right: -10%;
-  }
-
-  #section-3 .section-container .section-img-container .section-img {
-    width: 350px;
-  }
-
-  #section-4 {
-    padding: 7em 0em 12em 0em;
   }
 
   #section-4 .column-container .column .column-img {
